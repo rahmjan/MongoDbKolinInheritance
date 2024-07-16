@@ -54,8 +54,8 @@ fun main() {
     println("All animals in the database:")
     animals.forEach { animal ->
         when (animal) {
-            is Cat -> println("Cat: ${animal.name}, Favorite Toy: ${animal.favoriteToy}")
-            is Dog -> println("Dog: ${animal.name}, Favorite Park: ${animal.favoritePark}")
+            is Cat -> println("Cat: ${animal.name}, Favorite Toy: ${animal.favoriteToy}, Type: ${animal.type}")
+            is Dog -> println("Dog: ${animal.name}, Favorite Park: ${animal.favoritePark}, Type: ${animal.type}")
             else -> println("Unknown animal type: ${animal.name}")
         }
     }

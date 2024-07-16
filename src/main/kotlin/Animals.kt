@@ -8,23 +8,21 @@ import org.bson.types.ObjectId
 @BsonDiscriminator
 @NoArg
 open class Animal(
-    @BsonId val id: ObjectId? = null,
-    val name: String,
-    val type: String
+    @BsonId var id: ObjectId? = null,
+    var name: String,
+    var type: String
 )
 
 // Subclass
-@NoArg
 class Cat(
     id: ObjectId? = null,
     name: String,
-    val favoriteToy: String
+    var favoriteToy: String
 ) : Animal(id, name, "Cat")
 
 // Subclass
-@NoArg
 class Dog(
     id: ObjectId? = null,
     name: String,
-    val favoritePark: String
+    var favoritePark: String
 ) : Animal(id, name, "Dog")
