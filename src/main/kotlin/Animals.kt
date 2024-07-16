@@ -9,22 +9,22 @@ import org.bson.types.ObjectId
 @NoArg
 open class Animal(
     @BsonId val id: ObjectId? = null,
-    val name: String = "",
-    val type: String = ""
+    val name: String,
+    val type: String
 )
 
 // Subclass
 @NoArg
 class Cat(
     id: ObjectId? = null,
-    name: String = "",
-    val favoriteToy: String = ""
+    name: String,
+    val favoriteToy: String
 ) : Animal(id, name, "Cat")
 
 // Subclass
 @NoArg
 class Dog(
     id: ObjectId? = null,
-    name: String = "",
-    val favoritePark: String = ""
+    name: String,
+    val favoritePark: String
 ) : Animal(id, name, "Dog")

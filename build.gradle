@@ -1,6 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.0.0'
     id "org.jetbrains.kotlin.plugin.noarg" version "2.0.0"
+    id "application"
 }
 
 apply {
@@ -20,10 +21,14 @@ dependencies {
 }
 
 noArg {
-    annotation("org.example.NoArgs")
+    annotation("org.example.NoArg")
     invokeInitializers = true
 }
 
 kotlin {
     jvmToolchain(21)
+}
+
+application {
+    mainClass = 'org.example.MainKt'
 }
