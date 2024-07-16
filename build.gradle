@@ -1,0 +1,29 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.0.0'
+    id "org.jetbrains.kotlin.plugin.noarg" version "2.0.0"
+}
+
+apply {
+    plugin("org.jetbrains.kotlin.plugin.noarg")
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.mongodb:mongodb-driver-kotlin-sync:5.1.2"
+    api "org.mongodb:bson-kotlin:5.1.2"
+}
+
+noArg {
+    annotation("org.example.NoArgs")
+    invokeInitializers = true
+}
+
+kotlin {
+    jvmToolchain(21)
+}
