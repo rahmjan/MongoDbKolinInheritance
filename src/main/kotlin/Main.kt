@@ -19,7 +19,7 @@ fun main() {
             fromProviders(
                 DataClassCodecProvider(),
                 PojoCodecProvider.builder()
-                    .conventions(DEFAULT_CONVENTIONS) // @BsonDiscriminator
+                    .conventions(DEFAULT_CONVENTIONS)
                     .automatic(true)
                     .build(),
             ),
